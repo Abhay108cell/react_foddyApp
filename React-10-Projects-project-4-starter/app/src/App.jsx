@@ -1,5 +1,10 @@
+import { useState } from 'react';
 import styled from 'styled-components'
+
+const BASE_URL = "http://localhost:9000/"
+
 const App = () => {
+  const [data, setData] = useState(null)
   return (
 <Container>
     <TopContainer>
@@ -53,6 +58,7 @@ const FilterContainer = styled.section`
   display: flex;
   justify-content: center;
   gap:12px;
+  padding-bottom:40px;
 `
 
 const Button = styled.button`
@@ -64,8 +70,8 @@ color: white;
 `
 
 const FoodCardContainer = styled.section`
+height: calc(100vh -210px);
   background-image: url("/bg.png");
-  height: calc(100vh -170px);
 background-size: cover;
 `
 const FoodCard = styled.div`
