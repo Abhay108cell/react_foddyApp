@@ -16,6 +16,9 @@ const App = () => {
       <Button>Lunch</Button>
       <Button>Dinner</Button>
     </FilterContainer>
+    <FoodCardContainer>
+      <FoodCard></FoodCard>
+    </FoodCardContainer>
 </Container>
 
   )
@@ -58,4 +61,13 @@ border-radius:5px;
 padding: 6px 12px;
 border: none;
 color: white;
+`
+
+const FoodCardContainer = styled.section`
+  background-image: url("/bg.png");
+  height: calc(100vh -170px);
+background-size: cover;
+`
+const FoodCard = styled.div`
+  
 `
