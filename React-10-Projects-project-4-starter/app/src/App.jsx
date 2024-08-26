@@ -18,7 +18,24 @@ const App = () => {
 export default App;
 
 const Container = styled.div`
+max-width: 1200px;
+margin: 0 auto;
 `
 const TopContainer = styled.section`
-  
+  min-height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+
+  .search{
+    input{
+      background-color: transparent;
+      border: 1px solid red;
+      color: white;
+      border-radius: 5px;
+      height:40px;
+      font-size: 16px;
+    }
+  }
 `
