@@ -18,7 +18,7 @@ const App = () => {
 export default App;
 
 const MainContainer = styled.div`
-  
+  background-color: #323232
 `
 const TopContainer = styled.section`
   
