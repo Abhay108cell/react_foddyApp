@@ -10,6 +10,11 @@ const App = () => {
         <input type="search" placeholder="Search Food" />
       </div>
     </TopContainer>
+    <FilterContainer>
+      <Button>
+
+      </Button>
+    </FilterContainer>
 </Container>
 
   )
@@ -36,6 +41,13 @@ const TopContainer = styled.section`
       border-radius: 5px;
       height:40px;
       font-size: 16px;
+      padding: 0 10px;
     }
   }
+`
+
+
+const Button = styled.button`
+background-color: #ff4343;
+border-radius:5px;
 `
