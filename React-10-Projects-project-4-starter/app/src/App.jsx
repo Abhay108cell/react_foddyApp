@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-const BASE_URL = "http://localhost:9000";
+const BASE_URL = "http://localhost:9000/";
 
 const App = () => {
   const [data, setData] = useState(null);
@@ -25,8 +25,19 @@ const App = () => {
     };
 
     fetchFoodData();
-  })
+  },[])
 
+  console.log(data);
+  
+// const temp = [
+//   {
+//       "name": "Boilded Egg",
+//       "price": 10,
+//       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+//       "image": "/images/egg.png",
+//       "type": "breakfast"
+//   }
+// ]
 
   if(error) return <div>{error}</div>
   if(loading) return <div>loading...</div>
