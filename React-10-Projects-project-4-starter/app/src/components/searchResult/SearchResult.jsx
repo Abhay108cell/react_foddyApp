@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components";
 
 
-const SearchResult = () => {
+const SearchResult = ({data}) => {
   return (
     <FoodCardContainer>
     <FoodCard></FoodCard>
