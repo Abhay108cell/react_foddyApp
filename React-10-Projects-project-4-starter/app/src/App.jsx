@@ -6,18 +6,25 @@ const BASE_URL = "http://localhost:9000"
 
 const App = () => {
   const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+   setLoading(true)
 
   const fetchFoodData =  async () =>{
+    try {
+      const response = await fetch (BASE_URL)
+      const json =  await response.json();
+      
+      setData(json);
+      setLoading(false)
 
-    const response = await fetch (BASE_URL)
-    const json = response.json();
-
-    console.log(json);
-    
-
+    } catch (error) {
+      setError("unable to fetch data")
+    }
   
-
   }
+
+  fetchFoodData();
 
   return (
 <Container>
