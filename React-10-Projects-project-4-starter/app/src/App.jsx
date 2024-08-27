@@ -58,9 +58,6 @@ const App = () => {
         <Button>Lunch</Button>
         <Button>Dinner</Button>
       </FilterContainer>
-      <FoodCardContainer>
-        <FoodCard></FoodCard>
-      </FoodCardContainer>
     </Container>
   );
 };
@@ -105,9 +102,4 @@ const Button = styled.button`
   color: white;
 `;
 
-const FoodCardContainer = styled.section`
-  height: calc(100vh -210px);
-  background-image: url("/bg.png");
-  background-size: cover;
-`;
-const FoodCard = styled.div``;
+
