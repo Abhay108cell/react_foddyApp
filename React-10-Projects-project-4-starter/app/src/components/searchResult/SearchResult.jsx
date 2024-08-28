@@ -32,7 +32,10 @@ const FoodCardContainer = styled.section`
   background-image: url("/bg.png");
   background-size: cover;
 `;
-const FoodCards = styled.div``;
+const FoodCards = styled.div`
+display: flex;
+flex-wrap: wrap;
+`;
 const FoodCard = styled.div`
  width: 340px;
   height: 167px;
