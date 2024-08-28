@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { BASE_URL } from "../../App";
+import { BASE_URL, Button } from "../../App";
 
 const SearchResult = ({ data: foods }) => {
   return (
     <FoodCardContainer>
       <FoodCards>
-        {foods?.map(({name , image, text}) => (
+        {foods?.map(({name , image, text, price}) => (
           <FoodCard key={name}>
             <div className="food_image">
               <img src={BASE_URL + image} alt={name} />
@@ -15,6 +15,7 @@ const SearchResult = ({ data: foods }) => {
               <div className="info">
                 <h3>{name}</h3>
                 <p>{text}</p>
+                <Button>${price}</Button>
               </div>
             </div>
           </FoodCard>
