@@ -1,21 +1,21 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
-
-const SearchResult = ({data:foods}) => {
+const SearchResult = ({ data: foods }) => {
   return (
     <FoodCardContainer>
-    <FoodCards>
-      {
-        foods.map(()=>(
-            <Foodcard></Foodcard>
+      <FoodCards>
+        {foods.map((food) => (
+          <FoodCard key={food.name}>
+            {food.text}
+          </FoodCard>
         ))}
-    </FoodCards>
-  </FoodCardContainer>
-  )
-}
+      </FoodCards>
+    </FoodCardContainer>
+  );
+};
 
-export default SearchResult
+export default SearchResult;
 
 const FoodCardContainer = styled.section`
   height: calc(100vh -210px);
