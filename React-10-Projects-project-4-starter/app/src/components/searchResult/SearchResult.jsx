@@ -5,9 +5,11 @@ const SearchResult = ({ data: foods }) => {
   return (
     <FoodCardContainer>
       <FoodCards>
-        {foods.map((food) => (
+        {foods?.map((food) => (
           <FoodCard key={food.name}>
-            {food.text}
+            <div className="food_image">
+              <img src={food.image} alt={food.name} />
+            </div>
           </FoodCard>
         ))}
       </FoodCards>
