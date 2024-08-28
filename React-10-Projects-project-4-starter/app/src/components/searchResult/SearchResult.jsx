@@ -2,10 +2,15 @@ import React from 'react'
 import styled from "styled-components";
 
 
-const SearchResult = ({data}) => {
+const SearchResult = ({data:foods}) => {
   return (
     <FoodCardContainer>
-    <FoodCard></FoodCard>
+    <FoodCards>
+      {
+        foods.map(()=>(
+            <Foodcard></Foodcard>
+        ))}
+    </FoodCards>
   </FoodCardContainer>
   )
 }
@@ -17,4 +22,5 @@ const FoodCardContainer = styled.section`
   background-image: url("/bg.png");
   background-size: cover;
 `;
+const FoodCards = styled.div``;
 const FoodCard = styled.div``;
