@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { BASE_URL } from "../../App";
 
 const SearchResult = ({ data: foods }) => {
   return (
@@ -8,7 +9,7 @@ const SearchResult = ({ data: foods }) => {
         {foods?.map((food) => (
           <FoodCard key={food.name}>
             <div className="food_image">
-              <img src={food.image} alt={food.name} />
+              <img src={BASE_URL + food.image} alt={food.name} />
             </div>
           </FoodCard>
         ))}
