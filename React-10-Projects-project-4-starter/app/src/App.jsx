@@ -24,13 +24,15 @@ const App = () => {
         setError("unable to fetch data");
       }
     };
-
+Container
     fetchFoodData();
   }, []);
 
   console.log(data);
 
- 
+ const searchFood = (e)=>{
+  const searchValue = e.target.value
+ }
 
   if (error) return <div>{error}</div>;
   if (loading) return <div>loading...</div>;
@@ -43,7 +45,7 @@ const App = () => {
             <img src="/logo.svg" alt="logo" />
           </div>
           <div className="search">
-            <input type="search" placeholder="Search Food" />
+            <input onChange={searchFood} type="search" placeholder="Search Food" />
           </div>
         </TopContainer>
         <FilterContainer>
