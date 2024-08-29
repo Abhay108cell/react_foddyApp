@@ -4,6 +4,7 @@ import { BASE_URL, Button } from "../../App";
 
 const SearchResult = ({ data: foods }) => {
   return (
+    
     <FoodCardContainer>
       <FoodCards>
         {foods?.map(({name , image, text, price}) => (
