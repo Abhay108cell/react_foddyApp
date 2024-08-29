@@ -106,4 +106,8 @@ export const Button = styled.button`
   padding: 6px 12px;
   border: none;
   color: white;
+  cursor: pointer;
+  &:hover{
+    background-color: #ad0000;
+  }
 `;
