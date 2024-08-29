@@ -9,6 +9,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [filterData, setFilterData] = useState(null);
+  const [selectedBtn, setSelectedBtn ] = useState("all");
 
   useEffect(() => {
     const fetchFoodData = async () => {
@@ -42,6 +43,18 @@ const filter = data?.filter((food)=> food.name.toLowerCase().includes(searchValu
 setFilterData(filter)
  }
 
+
+ const filterFood = (type) =>{
+  if(type === "all"){
+    setFilterData(data);
+    setSelectedBtn("all");
+    return;
+  }
+  const filter = data?.filter((food)=> food.type.toLowerCase().includes(type.toLowerCase()))
+setFilterData(filter)
+setSelectedBtn(type)
+ }
+
   if (error) return <div>{error}</div>;
   if (loading) return <div>loading...</div>;
 
@@ -57,10 +70,10 @@ setFilterData(filter)
           </div>
         </TopContainer>
         <FilterContainer>
-          <Button>All</Button>
-          <Button>BreakFast</Button>
-          <Button>Lunch</Button>
-          <Button>Dinner</Button>
+          <Button onClick={()=>filterFood("all")}>All</Button>
+          <Button onClick={()=>filterFood("breakfast")}>BreakFast</Button>
+          <Button onClick={()=>filterFood("lunch")}>Lunch</Button>
+          <Button onClick={()=>filterFood("dinner")}>Dinner</Button>
         </FilterContainer>
       </Container>
       <SearchResult data={filterData} />
