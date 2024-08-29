@@ -9,15 +9,13 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  
-  
-  useEffect(()=>{
+  useEffect(() => {
     const fetchFoodData = async () => {
       setLoading(true);
       try {
         const response = await fetch(BASE_URL);
         const json = await response.json();
-  
+
         setData(json);
         setLoading(false);
       } catch (error) {
@@ -26,41 +24,43 @@ const App = () => {
     };
 
     fetchFoodData();
-  },[])
+  }, []);
 
   console.log(data);
-  
-// const temp = [
-//   {
-//       "name": "Boilded Egg",
-//       "price": 10,
-//       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
-//       "image": "/images/egg.png",
-//       "type": "breakfast"
-//   }
-// ]
 
-  if(error) return <div>{error}</div>
-  if(loading) return <div>loading...</div>
+  // const temp = [
+  //   {
+  //       "name": "Boilded Egg",
+  //       "price": 10,
+  //       "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+  //       "image": "/images/egg.png",
+  //       "type": "breakfast"
+  //   }
+  // ]
+
+  if (error) return <div>{error}</div>;
+  if (loading) return <div>loading...</div>;
 
   return (
-    <Container>
-      <TopContainer>
-        <div className="logo">
-          <img src="/logo.svg" alt="logo" />
-        </div>
-        <div className="search">
-          <input type="search" placeholder="Search Food" />
-        </div>
-      </TopContainer>
-      <FilterContainer>
-        <Button>All</Button>
-        <Button>BreakFast</Button>
-        <Button>Lunch</Button>
-        <Button>Dinner</Button>
-      </FilterContainer>
-      <SearchResult data={data}/>
-    </Container>
+    <>
+      <Container>
+        <TopContainer>
+          <div className="logo">
+            <img src="/logo.svg" alt="logo" />
+          </div>
+          <div className="search">
+            <input type="search" placeholder="Search Food" />
+          </div>
+        </TopContainer>
+        <FilterContainer>
+          <Button>All</Button>
+          <Button>BreakFast</Button>
+          <Button>Lunch</Button>
+          <Button>Dinner</Button>
+        </FilterContainer>
+      </Container>
+      <SearchResult data={data} />
+    </>
   );
 };
 
@@ -103,5 +103,3 @@ export const Button = styled.button`
   border: none;
   color: white;
 `;
-
-
