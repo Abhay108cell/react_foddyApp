@@ -55,6 +55,26 @@ setFilterData(filter)
 setSelectedBtn(type)
  }
 
+
+const filterBtn = [
+  {
+    name: "All",
+    type: "all",
+  },
+  {
+    name: "Breakfast",
+    type: "breakfast",
+  },
+  {
+    name: "Lunch",
+    type: "lunch",
+  },
+  {
+    name: "Dinner",
+    type: "dinner",
+  },
+]
+
   if (error) return <div>{error}</div>;
   if (loading) return <div>loading...</div>;
 
