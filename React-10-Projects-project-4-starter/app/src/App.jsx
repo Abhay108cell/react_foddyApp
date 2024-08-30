@@ -111,7 +111,7 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 const TopContainer = styled.section`
-  min-height: 120px;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -127,6 +127,11 @@ const TopContainer = styled.section`
       font-size: 16px;
       padding: 0 10px;
     }
+  }
+  @media (0 < width < 600px) {
+    flex-direction: column;
+    height: 120px;
+
   }
 `;
 const FilterContainer = styled.section`
