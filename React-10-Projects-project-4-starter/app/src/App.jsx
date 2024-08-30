@@ -92,6 +92,7 @@ const filterBtn = [
         <FilterContainer>
          {filterBtn.map((value) => (
           <Button
+          isSelected={selectedBtn === value.type}
           key={value.name}
           onClick={() => filterFood(value.type)}>
           {value.name}
@@ -142,7 +143,7 @@ const FilterContainer = styled.section`
 `;
 
 export const Button = styled.button`
-  background-color: #ff4343;
+  background: ${({isSelected})=>  (isSelected ?"#ad0000": "#ff4343")} ;
   border-radius: 5px;
   padding: 6px 12px;
   border: none;
@@ -151,4 +152,4 @@ export const Button = styled.button`
   &:hover{
     background-color: #ad0000;
   }
-`;
+`; 
