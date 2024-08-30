@@ -144,6 +144,7 @@ const FilterContainer = styled.section`
 
 export const Button = styled.button`
   background: ${({isSelected})=>  (isSelected ?"#ad0000": "#ff4343")} ;
+  outline:  1px solid ${({isSelected})=>  (isSelected ?"white": "#ff4343")} ;
   border-radius: 5px;
   padding: 6px 12px;
   border: none;
