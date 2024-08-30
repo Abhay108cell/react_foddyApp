@@ -90,10 +90,13 @@ const filterBtn = [
           </div>
         </TopContainer>
         <FilterContainer>
-          <Button onClick={()=>filterFood("all")}>All</Button>
-          <Button onClick={()=>filterFood("breakfast")}>BreakFast</Button>
-          <Button onClick={()=>filterFood("lunch")}>Lunch</Button>
-          <Button onClick={()=>filterFood("dinner")}>Dinner</Button>
+         {filterBtn.map((value) => (
+          <Button
+          key={value.name}
+          onClick={() => filterFood(value.type)}>
+          {value.name}
+          </Button>
+          ))}
         </FilterContainer>
       </Container>
       <SearchResult data={filterData} />
